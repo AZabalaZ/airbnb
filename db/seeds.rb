@@ -7,3 +7,5 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Vehicle.create(make: "Toyota", model: "Corolla", year: 2015, color: "Red", mileage: 50000, type: "Sedan")

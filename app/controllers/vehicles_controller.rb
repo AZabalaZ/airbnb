@@ -8,6 +8,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/1
   def show
+    @vehicle = set_vehicle
   end
 
   # GET /vehicles/new
@@ -17,12 +18,13 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/1/edit
   def edit
+    @vehicle = set_vehicle
   end
 
   # POST /vehicles
   def create
     @vehicle = Vehicle.new(vehicle_params)
-
+    @vehicle.user = current_user
     if @vehicle.save
       redirect_to @vehicle, notice: 'Vehicle was successfully created.'
     else
@@ -43,6 +45,10 @@ class VehiclesController < ApplicationController
   def destroy
     @vehicle.destroy
     redirect_to vehicles_url, notice: 'Vehicle was successfully destroyed.'
+  end
+
+  def my_vehicles
+    @vehicles = current_user.vehicles
   end
 
   private

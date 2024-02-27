@@ -1,0 +1,13 @@
+.container .field{
+  padding: 10px;
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+
+  label{
+    margin: unset;
+    margin-right: 20px;
+  }
+}

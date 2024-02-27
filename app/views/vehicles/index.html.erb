@@ -1,5 +1,17 @@
-<h1>hola</h1>
 
+<h1>Catalogo</h1>
+<div class="head-vehicles">
+<h2>Nuestros vehiculos</h2>
+<%=link_to 'New Vehicle', new_vehicle_path, class: "btn btn-primary"%>
+</div>
+
+<div class="container">
 <% @vehicles.each do |vehicle| %>
-  <p><%= vehicle.make %></p>
+  <div class="card-vehicle">
+    <h2><%= vehicle.make %></h2>
+    <p><%= vehicle.model %></p>
+    <p><%= vehicle.year %></p>
+    <%= link_to 'Ver', vehicle, class: "btn btn-primary" %>
+  </div>
 <% end %>
+</div>

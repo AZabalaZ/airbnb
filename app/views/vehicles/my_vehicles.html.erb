@@ -1,0 +1,19 @@
+<div class="head-vehicles">
+<h2>Mis vehiculos</h2>
+<%=link_to 'New Vehicle', new_vehicle_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container">
+<% @vehicles.each do |vehicle| %>
+  <div class="card-vehicle">
+    <h2><%= vehicle.make %></h2>
+    <p><%= vehicle.model %></p>
+    <p><%= vehicle.year %></p>
+    <div class="d-flex justify-content-beetwen">
+      <%= link_to 'Ver', vehicle, class: "button mx-3" %>
+      <%= link_to 'Editar', edit_vehicle_path(vehicle), class: "button mx-3" %>
+      <%= link_to 'Borrar', vehicle_path(vehicle), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "button mx-3" %>
+    </div>
+  </div>
+<% end %>
+</div>

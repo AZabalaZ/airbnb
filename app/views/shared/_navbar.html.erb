@@ -1,31 +1,22 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<!-- Header con el logo y el login -->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-dark">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <form class="form-inline my-2 my-lg-0 navbar-search" action="/search" method="GET">
-      <input class="form-control mr-sm-2" type="search" placeholder="Explora Vehiculos" aria-label="Buscar" name="q">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav ms-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "#", class: "nav-link text-white" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Messages", "#", class: "nav-link text-white" %>
           </li>
           <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
@@ -34,11 +25,55 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
           </li>
         <% end %>
       </ul>
     </div>
-
   </div>
 </div>
+
+<!-- Barra de búsqueda -->
+<% if current_page?(root_path) || user_signed_in? %>
+
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-light">
+    <div class="container">
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa-solid fa-car-side" style="color: #170745;"></i> Autos
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa-solid fa-bicycle"></i> Bicicletas
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa-solid fa-motorcycle"></i> Motos
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa-solid fa-van-shuttle"></i> Vans
+            </a>
+          </li>
+        </ul>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <form class="form-inline my-2 my-lg-0 navbar-search" action="/search" method="GET" style="margin-left: auto;">
+          <input class="form-control mr-sm-2" type="search" placeholder="Explora Vehiculos" aria-label="Buscar" name="q">
+          <button class="btn btn-outline-success my-2 my-sm-0 ml-2" type="submit">Buscar</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+<% end %>

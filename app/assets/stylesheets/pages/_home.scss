@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+.card {
+  height: 550px;
+  border-radius: 5px;
+}
+
+.card-img-top {
+  height: 75%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.container .row {
+  margin: auto;
+}
+
+.container {
+  margin-bottom: 20px;
+}

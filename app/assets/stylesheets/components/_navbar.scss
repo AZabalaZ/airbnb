@@ -5,8 +5,30 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  margin-top: 5px;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-search {
+  display: flex;
+  justify-content: right;
+  width: 30vw;
+}
+
+.navbar-lewagon.bg-light .container {
+  justify-content: space-between !important;
+  margin: auto;
+}
+
+.navbar-nav {
+  margin-left: 0;
+  margin-top: 5px;
+  display: flex;
+}
+
+.my-sm-0 {
+  margin-left: 5px;
 }

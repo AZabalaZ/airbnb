@@ -51,6 +51,11 @@ class VehiclesController < ApplicationController
     @vehicles = current_user.vehicles
   end
 
+  def rent
+    @vehicle = Vehicle.find(params[:id])
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vehicle
@@ -59,6 +64,6 @@ class VehiclesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def vehicle_params
-      params.require(:vehicle).permit(:make, :model, :year, :color, :mileage, :type)
+      params.require(:vehicle).permit(:make, :model, :year, :color, :mileage, :type, :description)
     end
 end

@@ -1,6 +1,12 @@
-
+<div class="container-1">
+<div class="card-vehicle">
 <h1><%= @vehicle.make %></h1>
 <p><%= @vehicle.model %></p>
 <p><%= @vehicle.year %></p>
+<p><%= @vehicle.description %></p>
+</div>
+</div>
 
 <%= link_to "back", vehicles_path %>
+
+<%= link_to "Rent", rent_path %>

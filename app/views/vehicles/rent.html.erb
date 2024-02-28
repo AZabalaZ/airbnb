@@ -1,0 +1,37 @@
+<h1>Complete</h1>
+<div class="d-flex justify-content-around">
+<div class="container-1">
+<%= form_with model: @rent, local: true do |form| %>
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date %>
+  </div>
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date %>
+  </div>
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= form.label "Comment" %>
+    <%= form.text_field "Comment" %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Rentar"%>
+  </div>
+<% end %>
+</div>
+
+<div class="container-1">
+  <div class="card-vehicle">
+    <h1><%= @vehicle.make %></h1>
+    <p><%= @vehicle.model %></p>
+    <p><%= @vehicle.year %></p>
+    <p><%= @vehicle.description %></p>
+  </div>
+</div>
+</div>
+
+<%= link_to 'Back', vehicles_path, class:"btn btn-primary" %>

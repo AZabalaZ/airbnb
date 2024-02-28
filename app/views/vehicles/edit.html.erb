@@ -1,26 +1,36 @@
 
-//edit the vehicle information
+<%# edit the vehicle information %>
 
 
 <%# Path: app/views/vehicles/edit.html.erb %>
 <h1>Editar vehiculo</h1>
-<div class="container-1">
+<div class="container-2">
 
-<%= form_with model: @vehicle, local: true do |form| %>
-  <div class="field">
-    <%= form.label :make %>
-    <%= form.text_field :make %>
-  </div>
-  <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
-  </div>
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.text_field :year %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <%= form_with model: @vehicle, local: true do |form| %>
+    <div class="field">
+      <%= form.label :make %>
+      <%= form.text_field :make %>
+    </div>
+
+    <div class="field">
+      <%= form.label :model %>
+      <%= form.text_field :model %>
+    </div>
+
+    <div class="field">
+      <%= form.label :year %>
+      <%= form.text_field :year %>
+    </div>
+
+    <div class="field">
+      <%= form.label :photo %>
+      <%= form.file_field :photo %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
 </div>
+
+<%= link_to 'Back', vehicles_path %>

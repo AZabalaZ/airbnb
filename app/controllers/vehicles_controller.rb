@@ -34,6 +34,7 @@ class VehiclesController < ApplicationController
 
   # PATCH/PUT /vehicles/1
   def update
+    @vehicle = Vehicle.find(params[:id])
     if @vehicle.update(vehicle_params)
       redirect_to @vehicle, notice: 'Vehicle was successfully updated.'
     else
@@ -64,6 +65,6 @@ class VehiclesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def vehicle_params
-      params.require(:vehicle).permit(:make, :model, :year, :color, :mileage, :type, :description)
+      params.require(:vehicle).permit(:make, :model, :year, :color, :mileage, :type, :photo, :description)
     end
 end

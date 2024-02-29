@@ -1,0 +1,11 @@
+<div class="container-1">
+<% @bookings.each do |booking| %>
+    <div class="card-vehicle">
+      <h2><%= booking.vehicle.brand %></h2>
+      <p><%= booking.vehicle.model %></p>
+      <p><%= booking.vehicle.year %></p>
+      <p><%= booking.name %></p>
+      <%= link_to 'Borrar', booking_path(booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "button mx-3" %>
+    </div>
+<% end %>
+</div>

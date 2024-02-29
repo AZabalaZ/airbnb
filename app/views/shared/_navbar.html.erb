@@ -19,6 +19,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mis vehiculos", my_vehicles_path, class: "dropdown-item" %>
+              <%= link_to "Mis reservas", mis_reservas_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
@@ -72,10 +73,14 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <form class="form-inline my-2 my-lg-0 navbar-search" action="/search" method="GET" style="margin-left: auto;">
-          <input class="form-control mr-sm-2" type="search" placeholder="Explora Vehiculos" aria-label="Buscar" name="q">
-          <button class="btn btn-outline-success my-2 my-sm-0 ml-2" type="submit">Buscar</button>
-        </form>
+        <%= form_with url: vehicles_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
 
       </div>
     </div>

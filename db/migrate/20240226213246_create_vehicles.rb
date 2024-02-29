@@ -7,6 +7,7 @@ class CreateVehicles < ActiveRecord::Migration[7.1]
       t.string :model
       t.integer :year
       t.integer :mileage
+      t.boolean :take, default: false
 
       t.timestamps
     end

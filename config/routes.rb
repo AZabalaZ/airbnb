@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :vehicles
+  resources :vehicles do
+    resources :bookings, only: [:index, :new, :create]
+  end
+  resources :bookings, only: [:destroy]
   get "/my_vehicles", to: "vehicles#my_vehicles"
-  get "/rent/:id", to: "vehicles#rent", as: :rent
+  get "/mis_reservas", to: "bookings#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

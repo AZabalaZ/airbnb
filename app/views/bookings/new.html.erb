@@ -1,22 +1,15 @@
 <h1>Complete</h1>
 <div class="d-flex justify-content-around">
 <div class="container-2">
-<%= form_with model: @rent, local: true do |form| %>
+<%= simple_form_for [@vehicle, @booking] do |form| %>
   <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_field :start_date %>
+    <%= form.input :start_date, html5: true %>
   </div>
   <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_field :end_date %>
+    <%= form.input :end_date, html5: true%>
   </div>
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= form.label "Comment" %>
-    <%= form.text_field "Comment" %>
+    <%= form.input :name %>
   </div>
   <div class="actions">
     <%= form.submit "Rent"%>

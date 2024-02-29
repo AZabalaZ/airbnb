@@ -1,6 +1,6 @@
 <h1>Complete</h1>
 <div class="d-flex justify-content-around">
-<div class="container-1">
+<div class="container-2">
 <%= form_with model: @rent, local: true do |form| %>
   <div class="field">
     <%= form.label :start_date %>
@@ -19,12 +19,12 @@
     <%= form.text_field "Comment" %>
   </div>
   <div class="actions">
-    <%= form.submit "Rentar"%>
+    <%= form.submit "Rent"%>
   </div>
 <% end %>
 </div>
 
-<div class="container-1">
+<div class="container-2">
   <div class="card-vehicle">
     <h1><%= @vehicle.make %></h1>
     <p><%= @vehicle.model %></p>

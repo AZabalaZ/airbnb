@@ -1,14 +1,14 @@
 <!-- Header con el logo y el login -->
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-dark">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to  root_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link text-white" %>
+            <%= link_to "Home", root_path, class: "nav-link text-white" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link text-white" %>
@@ -40,27 +40,33 @@
 
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <%= link_to vehicles_path, class: "nav-link"  do %>
+              <i class="fa-solid fa-border-all" style="color: #170745;"></i> Todos
+            <% end %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to vehicles_path(vehicle_type: "car"), class: "nav-link"  do %>
               <i class="fa-solid fa-car-side" style="color: #170745;"></i> Autos
-            </a>
+            <% end %>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <%= link_to vehicles_path(vehicle_type: "bike"), class: "nav-link" do %>
               <i class="fa-solid fa-bicycle"></i> Bicicletas
-            </a>
+            <% end %>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <%= link_to vehicles_path(vehicle_type: "motorcycle"), class: "nav-link" do %>
               <i class="fa-solid fa-motorcycle"></i> Motos
-            </a>
+            <% end %>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <%= link_to vehicles_path(vehicle_type: "van"), class: "nav-link" do %>
               <i class="fa-solid fa-van-shuttle"></i> Vans
-            </a>
+            <% end %>
           </li>
         </ul>
 

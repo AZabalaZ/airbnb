@@ -4,6 +4,9 @@ class VehiclesController < ApplicationController
   # GET /vehicles
   def index
     @vehicles = Vehicle.all
+    if params[:vehicle_type].present?
+      @vehicles = @vehicles.where(vehicle_type: params[:vehicle_type])
+    end
   end
 
   # GET /vehicles/1
@@ -65,6 +68,6 @@ class VehiclesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def vehicle_params
-      params.require(:vehicle).permit(:make, :model, :year, :color, :mileage, :type, :photo, :description)
+      params.require(:vehicle).permit(:brand, :model, :year, :color, :mileage, :vehicle_type, :photo, :description, :name, :ubication)
     end
 end

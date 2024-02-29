@@ -1,10 +1,12 @@
 <div class="container-1">
-<div class="card-vehicle">
-<h1><%= @vehicle.make %></h1>
-<p><%= @vehicle.model %></p>
-<p><%= @vehicle.year %></p>
-<p><%= @vehicle.description %></p>
-</div>
+  <div class="card-vehicle">
+    <h2><%= @vehicle.brand %></h2>
+    <p>Modelo: <%= @vehicle.model %></p>
+    <p>Año: <%= @vehicle.year %></p>
+    <p>Dueño: <%= @vehicle.name %></p>
+    <p>ubicación: <%= @vehicle.ubication %></p>
+    <p>Detalles: <%= @vehicle.description %></p>
+  </div>
 </div>
 
 <%= link_to "back", vehicles_path %>

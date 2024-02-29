@@ -8,8 +8,8 @@
 
   <%= form_with model: @vehicle, local: true do |form| %>
     <div class="field">
-      <%= form.label :make %>
-      <%= form.text_field :make %>
+      <%= form.label :brand %>
+      <%= form.text_field :brand %>
     </div>
 
     <div class="field">
@@ -20,6 +20,24 @@
     <div class="field">
       <%= form.label :year %>
       <%= form.text_field :year %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </div>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= form.label :ubication %>
+      <%= form.text_field :ubication %>
+    </div>
+
+    <div class="field">
+      <%= form.label :vehicle_type %>
+      <%= form.select :vehicle_type, options_for_select({ 'Automóvil' => 'car', 'Bicicleta' => 'bike', 'Motocicleta' => 'motorcycle', 'Furgoneta' => 'van' }) %>
     </div>
 
     <div class="field">

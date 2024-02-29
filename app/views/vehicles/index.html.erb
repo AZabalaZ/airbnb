@@ -7,9 +7,12 @@
 <div class="container-1">
   <% @vehicles.each do |vehicle| %>
     <div class="card-vehicle">
-      <h2><%= vehicle.make %></h2>
-      <p><%= vehicle.model %></p>
-      <p><%= vehicle.year %></p>
+      <h2><%= vehicle.brand %></h2>
+      <p>Modelo: <%= vehicle.model %></p>
+      <p>Año: <%= vehicle.year %></p>
+      <p>Dueño: <%= vehicle.name %></p>
+      <p>Ubicación: <%= vehicle.ubication %></p>
+
       <%= link_to 'Ver', vehicle, class: "btn btn-primary" %>
     </div>
   <% end %>

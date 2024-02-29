@@ -3,9 +3,17 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.where(take: false)
     if params[:vehicle_type].present?
       @vehicles = @vehicles.where(vehicle_type: params[:vehicle_type])
+    end
+    if params[:query].present?
+      sql_subquery = <<~SQL
+      brand @@ :query
+      OR model @@ :query
+      OR ubication @@ :query
+      SQL
+      @vehicles = @vehicles.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
@@ -53,10 +61,6 @@ class VehiclesController < ApplicationController
 
   def my_vehicles
     @vehicles = current_user.vehicles
-  end
-
-  def rent
-    @vehicle = Vehicle.find(params[:id])
   end
 
 

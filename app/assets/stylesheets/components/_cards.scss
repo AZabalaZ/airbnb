@@ -5,7 +5,7 @@
   padding: 10px;
   margin: 15px;
   width: 300px;
-  height: 300px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,11 +17,6 @@
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
   }
 }
 
@@ -46,6 +41,7 @@ h1{
   margin: 10px 30px;
 }
 
+
 .card-vehicle .button{
   text-decoration: none;
   display: flex;
@@ -61,4 +57,9 @@ h1{
   &:hover{
     background-color: #0056b3;
   }
+}
+
+.vehicle-photo {
+  max-width: 100%;
+  height: auto;
 }

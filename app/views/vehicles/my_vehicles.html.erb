@@ -6,7 +6,8 @@
 <div class="container-1">
 <% @vehicles.each do |vehicle| %>
   <div class="card-vehicle">
-    <h2><%= vehicle.brand %></h2>
+    <%= cl_image_tag vehicle.photo.key, height: 300, width: 400, crop: :fill, class: "vehicle-photo" if vehicle.photo.attached? %>
+    <h2 style="margin-top: inherit;"><%= vehicle.brand %></h2>
     <p><%= vehicle.model %></p>
     <p><%= vehicle.year %></p>
     <div class="d-flex justify-content-beetwen">

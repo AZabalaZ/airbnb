@@ -1,6 +1,7 @@
 <div class="container-1">
 <% @bookings.each do |booking| %>
     <div class="card-vehicle">
+      <%= cl_image_tag booking.vehicle.photo.key, height: 300, width: 400, crop: :fill, class: "vehicle-photo" if booking.vehicle.photo.attached? %>
       <h2><%= booking.vehicle.brand %></h2>
       <p><%= booking.vehicle.model %></p>
       <p><%= booking.vehicle.year %></p>

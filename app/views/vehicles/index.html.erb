@@ -1,7 +1,7 @@
 <h1>Catalogo</h1>
 <div class="head-vehicles">
   <h2>Nuestros vehiculos</h2>
-  <%=link_to 'New Vehicle', new_vehicle_path, class: "btn btn-primary", style: "margin-bottom: auto" %>
+  <%=link_to 'New Vehicle', new_vehicle_path, class: "btn-new", style: "margin-bottom: 6px" %>
 </div>
 
 <div class="container-1">
@@ -13,8 +13,9 @@
       <p>Año: <%= vehicle.year %></p>
       <p>Dueño: <%= vehicle.name %></p>
       <p>Ubicación: <%= vehicle.ubication %></p>
+      <p>Precio: <%= vehicle.price %></p>
 
-      <%= link_to 'Ver', vehicle, class: "btn btn-primary" %>
+      <%= link_to 'Ver', vehicle, class: "btn-ver" %>
     </div>
   <% end %>
 </div>

@@ -8,7 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Vehicle.create!(brand: "Toyota", model: "Corolla", year: 2015, color: "Red", mileage: 50000, user: User.first, description: "Great car, very reliable")
-Vehicle.create!(brand: "Honda", model: "Civic", year: 2016, color: "Blue", mileage: 40000, user: User.first, description: "Great car, very reliable")
-Vehicle.create!(brand: "Ford", model: "Fusion", year: 2017, color: "Black", mileage: 30000, user: User.first, description: "Great car, very reliable")
-Vehicle.create!(brand: "Chevrolet", model: "Malibu", year: 2018, color: "White", mileage: 20000, user: User.first, description: "Great car, very reliable")
+# Vehicle.create!(brand: "Toyota", model: "Corolla", year: 2015, color: "Red", price: 50000, user: User.first, description: "Great car, very reliable")
+# Vehicle.create!(brand: "Honda", model: "Civic", year: 2016, color: "Blue", price: 40000, user: User.first, description: "Great car, very reliable")
+# Vehicle.create!(brand: "Ford", model: "Fusion", year: 2017, color: "Black", price: 30000, user: User.first, description: "Great car, very reliable")
+# Vehicle.create!(brand: "Chevrolet", model: "Malibu", year: 2018, color: "White", price: 20000, user: User.first, description: "Great car, very reliable")

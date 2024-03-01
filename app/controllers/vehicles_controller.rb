@@ -36,6 +36,7 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user = current_user
+
     if @vehicle.save
       redirect_to @vehicle, notice: 'Vehicle was successfully created.'
     else
@@ -63,15 +64,14 @@ class VehiclesController < ApplicationController
     @vehicles = current_user.vehicles
   end
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_vehicle
-      @vehicle = Vehicle.find(params[:id])
-    end
+  def set_vehicle
+    @vehicle = Vehicle.find(params[:id])
+  end
 
     # Only allow a trusted parameter "white list" through.
-    def vehicle_params
-      params.require(:vehicle).permit(:brand, :model, :year, :color, :mileage, :vehicle_type, :photo, :description, :name, :ubication)
-    end
+  def vehicle_params
+    params.require(:vehicle).permit(:brand, :model, :year, :color, :mileage, :vehicle_type, :description, :name, :ubication, :photo)
+  end
 end
